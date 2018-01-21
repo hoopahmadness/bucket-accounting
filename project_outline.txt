@@ -1,0 +1,16 @@
+Ideally, have an API that pulls from TD or from Mint to get my spending and input. Otherwise I'd have to input it myself.
+
+All bank accounts are separate ACCOUNTS
+
+An ACCOUNT is made up of one or more BUCKETS. There is a default (general) bucket that all other buckets in that account are carved out of.
+
+ACCOUNTS will also store a list of TRANSACTIONS, including income. Transactions are debits that are relevant to a specific bucket. If I can't pull all my transactions from Mint then I'm not going to be able to keep track of the general bucket...
+
+Buckets can only be a part of one ACCOUNT. They include information about their goal (general bucket doesn't have a goal), their current amount, their goal and start dates.
+
+
+Not sure how I want to run this. Local deamon possibly, but prefered if I can run it as needed. 
+
+Storage will have to be encrypted. It'll store the state of all the accounts locally, encrypted. Need to look into what I need to account for.
+
+First thing to do is build a mint scraper based on mintapi for python.

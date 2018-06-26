@@ -4,6 +4,8 @@
 *.so
 *.dylib
 
+**/bucket-accounting
+
 # Test binary, build with `go test -c`
 *.test
 

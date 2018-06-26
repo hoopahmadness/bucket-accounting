@@ -33,6 +33,30 @@ func main() {
 						return nil
 					},
 				},
+				{
+					Name:  "dissolve",
+					Usage: "dissolve a bucket by name",
+					Action: func(c *cli.Context) error {
+						fmt.Println("removed task template: ", c.Args().First)
+						return nil
+					},
+				},
+				{
+					Name:  "reactivate",
+					Usage: "reactive a dissolved bucket by name",
+					Action: func(c *cli.Context) error {
+						fmt.Println("removed task template: ", c.Args().First)
+						return nil
+					},
+				},
+				{
+					Name:  "edit",
+					Usage: "edit a bucket's logic by name",
+					Action: func(c *cli.Context) error {
+						fmt.Println("removed task template: ", c.Args().First)
+						return nil
+					},
+				},
 			},
 		},
 		{
@@ -58,6 +82,30 @@ func main() {
 				},
 			},
 		},
+		{
+			Name:    "transaction",
+			Aliases: []string{"b"},
+			Usage:   "submitting a new transaction, such as a paycheck",
+			Subcommands: []cli.Command{
+				{
+					Name:  "list", //shows a single report
+					Usage: "lists all saved paychecks",
+					Action: func(c *cli.Context) error {
+						fmt.Println("new task template: ", c.Args().First())
+						return nil
+					},
+				},
+			},
+			Action: func(c *cli.Context) error {
+				fmt.Println("new transaction submitted: ", c.Args().First())
+				return nil
+			},
+		},
+	}
+	app.Action = func(c *cli.Context) error {
+		//probably will have no default behavior
+		fmt.Println("boom! I say!")
+		return nil
 	}
 
 	err := app.Run(os.Args)
